@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="myId" datatype="html">
+        <source>Hello</source>
+        <target>Bounjour</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Hello Description</note>
+        <note priority="1" from="meaning">HelloMeaning</note>
+      </trans-unit>
+      <trans-unit id="8febbf66ec19fa6037919caf360d1ff7cb1115a0" datatype="html">
+        <source>Top Heroes</source>
+        <target>Meilleurs Héros</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <!--en los select te crea un trans-unit pra el texto fijo y otro para las variables-->
+      <trans-unit id="heroGender" datatype="html">
+        <source>The hero is <x id="ICU" equiv-text="{hero.gender, select, male {...} female {...} centaur {...}}"/></source>
+        <target>Le héros est <x id="ICU" equiv-text="{hero.gender, select, male {...} female {...} centaur {...}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdcd7be347420cebf493194573a991e7a11e8a5e" datatype="html">
+        <source>{VAR_SELECT, select, male {male} female {female} centaur {centaur} }</source>
+        <target>{VAR_SELECT, select, male {un homme} female {une femme} centaur {un centaure} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <!--hace lo mismo con el plural-->
+      <trans-unit id="heroDaysOfSeen" datatype="html">
+        <source>Last seen <x id="ICU" equiv-text="{hero.daysOfSeen, plural, =0 {...} =1 {...} other {...}}"/></source>
+        <target>Vu pour la dernière fois <x id="ICU" equiv-text="{hero.daysOfSeen, plural, =0 {...} =1 {...} other {...}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c2590a14f0f91920643457f4f3da8b22272df551" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {today} =1 {one day ago} other {<x id="INTERPOLATION" equiv-text="{{hero.daysOfSeen}}"/> days ago} }</source>
+        <target>{VAR_PLURAL, plural, =0 {aujourd'hui} =1 {il y a un jour} other {il y a <x id="INTERPOLATION" equiv-text="{{hero.daysOfSeen}}"/> jours} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/hero-detail/hero-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

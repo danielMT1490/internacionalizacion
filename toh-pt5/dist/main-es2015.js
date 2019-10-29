@@ -41,7 +41,7 @@ module.exports = "<h1>{{title}}</h1>\n<nav>\n  <a routerLink=\"/dashboard\">Dash
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Top Heroes</h3>\n<div class=\"grid grid-pad\">\n  <a *ngFor=\"let hero of heroes\" class=\"col-1-4\"\n      routerLink=\"/detail/{{hero.id}}\">\n    <div class=\"module hero\">\n      <h4>{{hero.name}}</h4>\n    </div>\n  </a>\n</div>\n"
+module.exports = "<!--Si colocamos el mismo id con @@myId entiendo \n  que debe utilizar la misma traduccion para los dos elementos\ncon la sintaxis Meaning|Descripcion@@Id-->\n<h1 i18n=\"HelloMeaning|Hello Description@@myId\">Hello</h1>\n<p i18n=\"@@myId\">Good Bye</p>\n\n<!--Para añadir las traducciones tenemos que añadir el attr i18n y \n  con el comenado ng xi18n genera el \n  fichero de origen para las traducciones por defecto se llamrara message.xlf-->\n<h3 i18n>Top Heroes</h3>\n<div class=\"grid grid-pad\">\n  <a *ngFor=\"let hero of heroes\" class=\"col-1-4\"\n      routerLink=\"/detail/{{hero.id}}\">\n    <div class=\"module hero\">\n      <h4>{{hero.name}}</h4>\n    </div>\n  </a>\n</div>\n"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = "<h3>Top Heroes</h3>\n<div class=\"grid grid-pad\">\n  <a *ngFo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"hero\">\n  <h2>{{hero.name | uppercase}} Details</h2>\n  <div><span>id: </span>{{hero.id}}</div>\n  <div>\n    <label>name:\n      <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n    </label>\n  </div>\n  <button (click)=\"goBack()\">go back</button>\n</div>\n"
+module.exports = "<div *ngIf=\"hero\">\n  <h2>{{hero.name | uppercase}} Details</h2>\n  <!--Translate por condicion select-->\n  <div i18n=\"@@heroGender\">The hero is {hero.gender, select, male {male} female {female} centaur {centaur}}</div>\n  <!--Translate por plurales plural-->\n  <div i18n=\"@@heroDaysOfSeen\">Last seen {hero.daysOfSeen, plural, =0 {today} =1 {one day ago} other {{{hero.daysOfSeen}} days ago}}</div>\n  <br>\n  <div><span>id: </span>{{hero.id}}</div>\n  <div>\n    <label>name:\n      <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n    </label>\n  </div>\n  <button (click)=\"goBack()\">go back</button>\n</div>\n"
 
 /***/ }),
 
@@ -519,16 +519,16 @@ MessagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEROES", function() { return HEROES; });
 const HEROES = [
-    { id: 11, name: 'Dr Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' }
+    { id: 11, name: 'Dr Nice', daysOfSeen: 0, gender: 'male' },
+    { id: 12, name: 'Narco', daysOfSeen: 1, gender: 'male' },
+    { id: 13, name: 'Bombasto', daysOfSeen: 3, gender: 'centaur' },
+    { id: 14, name: 'Celeritas', daysOfSeen: 1, gender: 'female' },
+    { id: 15, name: 'Magneta', daysOfSeen: 0, gender: 'female' },
+    { id: 16, name: 'RubberMan', daysOfSeen: 4, gender: 'centaur' },
+    { id: 17, name: 'Dynama', daysOfSeen: 1, gender: 'female' },
+    { id: 18, name: 'Dr IQ', daysOfSeen: 0, gender: 'male' },
+    { id: 19, name: 'Magma', daysOfSeen: 1, gender: 'centaur' },
+    { id: 20, name: 'Tornado', daysOfSeen: 0, gender: 'male' }
 ];
 
 

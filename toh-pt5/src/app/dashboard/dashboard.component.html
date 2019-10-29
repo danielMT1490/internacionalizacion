@@ -1,4 +1,13 @@
-<h3>Top Heroes</h3>
+<!--Si colocamos el mismo id con @@myId entiendo 
+  que debe utilizar la misma traduccion para los dos elementos
+con la sintaxis Meaning|Descripcion@@Id-->
+<h1 i18n="HelloMeaning|Hello Description@@myId">Hello</h1>
+<p i18n="@@myId">Good Bye</p>
+
+<!--Para añadir las traducciones tenemos que añadir el attr i18n y 
+  con el comenado ng xi18n genera el 
+  fichero de origen para las traducciones por defecto se llamrara message.xlf-->
+<h3 i18n>Top Heroes</h3>
 <div class="grid grid-pad">
   <a *ngFor="let hero of heroes" class="col-1-4"
       routerLink="/detail/{{hero.id}}">

@@ -51,6 +51,13 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "fr":{
+              "aot": true,
+              "outputPath": "dist/angular.io-example/",
+              "i18nFile": "src/locale/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr"
             }
           }
         },
@@ -62,6 +69,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular.io-example:build:production"
+            },
+            "fr": {
+              "browserTarget": "angular.io-example:build:fr"
             }
           }
         },

@@ -1,5 +1,10 @@
 <div *ngIf="hero">
   <h2>{{hero.name | uppercase}} Details</h2>
+  <!--Translate por condicion select-->
+  <div i18n="@@heroGender">The hero is {hero.gender, select, male {male} female {female} centaur {centaur}}</div>
+  <!--Translate por plurales plural-->
+  <div i18n="@@heroDaysOfSeen">Last seen {hero.daysOfSeen, plural, =0 {today} =1 {one day ago} other {{{hero.daysOfSeen}} days ago}}</div>
+  <br>
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label>name:
